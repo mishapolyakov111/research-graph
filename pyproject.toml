@@ -1,7 +1,7 @@
 [project]
 name = "research-graph"
 version = "0.1.0"
-description = "Add your description here"
+description = "Research graph: data pipeline project for the ITMO Python course"
 readme = "README.md"
 authors = [
     { name = "mishapolyakov111", email = "mishapolyakov111@gmail.com" }
@@ -24,4 +24,36 @@ dev = [
     "pytest>=9.1.1",
     "pytest-cov>=7.1.0",
     "ruff>=0.16.9",
+]
+
+[project.scripts]
+rg = "research_graph.cli:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src", "tests"]
+warn_unused_ignores = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=research_graph --cov-report=term-missing"
+
+[tool.coverage.run]
+branch = true
+source = ["src/research_graph"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
 ]
