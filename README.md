@@ -1,11 +1,5 @@
 # research-graph
 
-![CI](https://github.com/mishapolyakov111/research-graph/actions/workflows/ci.yml/badge.svg)
-
-Учебный проект курса по Python. В течение семестра здесь будет собираться пайплайн данных: загрузка данных из внешних источников (GitHub и другие), их хранение и обработка.
-
-Сейчас в репозитории лежит каркас проекта: настройки через переменные окружения, логирование, CLI `rg` и инструменты контроля качества (ruff, mypy, pytest, pre-commit, GitHub Actions).
-
 ## Требования
 
 - Python 3.12+
